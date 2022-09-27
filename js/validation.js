@@ -8,7 +8,8 @@ for(let i=0;i<inputs.length;i++)
       this.value="";
     this.classList.remove("error_input");
     this.nextElementSibling.innerHTML="";
-    this.style.setProperty("--color_placeholder","hsla(249, 10%, 26%,.7)");
+    this.nextElementSibling.style.display="none";
+    this.style.setProperty("--color_placeholder","hsla(249, 10%, 26%,.8)");
   });
 
   inputs[i].addEventListener("invalid",function(e){
@@ -17,6 +18,7 @@ for(let i=0;i<inputs.length;i++)
       if(this.value=="")
       {
         this.nextElementSibling.innerHTML= this.placeholder+" can not be empty";
+        this.nextElementSibling.style.display="block";
         this.style.setProperty("--color_placeholder","transparent");
       }
       else{
@@ -27,5 +29,5 @@ for(let i=0;i<inputs.length;i++)
         }
       }  
   });
-  
+
 }
